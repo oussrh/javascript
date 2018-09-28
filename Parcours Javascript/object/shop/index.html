@@ -1,25 +1,90 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Javascript | Shop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
 </head>
+
 <body>
     <script>
-        let objets = ['épée','hache','sceptre','gun'];
+        let objets = [{
+                title: "épée",
+                physic: 5,
+                magic: 50,
+                minLevel: 10,
+                available: false
+            },
+            {
+                title: "sceptre",
+                physic: 5,
+                magic: 10,
+                minLevel: 12,
+                available: true
+            },
+            {
+                title: "hache",
+                physic: 5,
+                magic: 40,
+                minLevel: 1,
+                available: true
+            },
+            {
+                title: "gun",
+                physic: 5,
+                magic: 10,
+                minLevel: 12,
+                available: false
+            },
+        ];
 
-        let Shop = {
 
-            title : "d",
-            physic : 5,
-            magic : 10,
-            minLevel : 1,
-            available : false,
+        function printAll() {
+            for (i = 0; i < objets.length; i++) {
+
+                for (let key in objets[i]) {
+                    console.log(key + ' : ' + objets[i][key]);
+                }
+                console.log('\n');
+
+            }
         }
+
+        function printOnlyAvailable() {
+
+            for (i = 0; i < objets.length; i++) {
+
+                if (objets[i]['available'] == true) {
+
+                    console.log(objets[i]['title']);
+                }
+
+            }
+        }
+
+        function printLevelTen() {
+
+            for (i = 0; i < objets.length; i++) {
+
+                if (objets[i]['minLevel'] >= 10) {
+
+                    console.log(objets[i]['title']);
+                }
+
+            }
+
+        }
+
+        console.log('\nAll Titles');
+        printAll();
+        console.log('\nTitle available');
+        printOnlyAvailable();
+        console.log('\nMin Level 10');
+        printLevelTen();
     </script>
 </body>
-</html>
 
+</html>
