@@ -3,17 +3,28 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Javascript | Aleatoire 1</title>
+    <title>Javascript | Personnage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 </head>
 <body>
     <script>
-      let floatBateau = 10.4;
-      let couleBateau = Math.floor(floatBateau);
-      let voleBateau = Math.ceil(floatBateau);
+     let mainCharacter ={
+         name : 'bluethoot',
+         level : 25,
+         life : 100,
+         weapon : {
+             name : 'gun',
+             damage : '11'
+         },
+         attack : function(){
 
-      console.log(couleBateau + ' ' + voleBateau);
+             console.log('le guerrier ' + this.name + ' attack avec sont ' + this.weapon.name + ' et il a fait des degat de ' + (this.level*this.weapon.damage));
+         }
+     }
+
+     mainCharacter.attack();
+     
     </script>
 </body>
 </html>
