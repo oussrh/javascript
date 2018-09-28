@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Javascript | fonction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    <script>
+        var nb1 = Math.floor(Math.random()*10)+1;
+        var nb2 = Math.floor(Math.random()*10)+1;
+
+        function minder(a,b){
+            return "le resulta de la soustraction de " + nb1 + " et " + nb2 + " est " + (a - b);
+        }
+
+        function divs(a,b){
+            return "le resultat de la division de " + nb1 + " et " + nb2 + " est " + (a / b);
+        }
+
+        function multip(a,b){
+            return "le resultat de la multiplications de " + nb1 + " et " + nb2 + " est " + (a * b);
+        }
+        
+        function pourcent(a,b){
+            return a+'% de '+b +'= '+(a*b)/100;
+        }
+
+        function vitesse(a,b){
+            return 'votre vitesse et de '+ (a/b) +'km/h';
+        }
+
+
+       console.log(minder(nb1,nb2));
+       console.log(divs(nb1,nb2));
+       console.log(multip(nb1,nb2));
+       console.log(pourcent(nb1,nb2));
+       console.log(vitesse(nb1,nb2));
+
+    </script>
+</body>
+</html>

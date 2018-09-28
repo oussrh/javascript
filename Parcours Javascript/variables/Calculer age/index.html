@@ -3,16 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Javascript | Ex3</title>
+    <title>Javascript | Calculer l'age</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 </head>
 <body>
     <script>
+       var cetteAnneeLA =  new Date();
+       
+       var annif = new Date("1988");
 
-        var nom = prompt("Name : ", "your name here");
-        alert("Hello my friend " +  nom );
-        
+       var age = cetteAnneeLA.getFullYear() - annif.getFullYear();
+
+       console.log('vous etes vieux, vous avez '+ age);
     </script>
 </body>
 </html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Javascript | assigner des grades</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <script>
+        function grade() {
+
+            for (var i = 0; i < 101; i++) {
+
+
+                if (i >= 90) {
+                    console.log('Pour ' + i + ' points vous avez le grade A');
+                } else if (i >= 80) {
+                    console.log('Pour ' + i + ' points vous avez le grade B');
+                } else if (i >= 70) {
+                    console.log('Pour ' + i + ' points vous avez le grade C');
+                } else if (i >= 65) {
+                    console.log('Pour ' + i + ' points vous avez le grade D');
+                } else if (i < 65) {
+                    console.log('Pour ' + i + ' points vous avez le grade F');
+                }
+            }
+        }
+
+        console.log(grade());
+    </script>
+</body>
+
+</html>

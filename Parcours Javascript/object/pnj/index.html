@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Javascript | Personnage non-joueur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    <script>
+     let character = {
+
+        name : "toto",
+        age : 15,
+        itemsToGive : ['pizza','sourie','gsm'],
+        giveItem : function(){
+            return this.itemsToGive[Math.floor(Math.random()*this.itemsToGive.length)];
+
+        }
+     };
+
+     console.log(character.name+'\n'+character.age+'\n'+character.giveItem());
+     
+    </script>
+</body>
+</html>
+
