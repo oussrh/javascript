@@ -1,20 +1,62 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Javascript | Aleatoire 1</title>
+    <title>Javascript | Personnage Attack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
 </head>
+
 <body>
     <script>
-      let floatBateau = 10.4;
-      let couleBateau = Math.floor(floatBateau);
-      let voleBateau = Math.ceil(floatBateau);
+        let Character = {
+            nom: this.nom,
+            level: this.level,
+            life: this.life,
+            weapon: {
+                arme: this.arme,
+                damage: this.damage
+            },
 
-      console.log(couleBateau + ' ' + voleBateau);
+            attack: function () {
+
+                console.log(this.nom + ' attaque ' + antiCharacter.nom);
+                console.log('et lui inflige ' + (this.level * this.weapon.damage) + ' de dégats');
+                console.log(antiCharacter.nom + 'a maintenant ' + (antiCharacter.life - (this.level * this.weapon
+                    .damage)) + ' de vie');
+            },
+
+            recevDamage: function () {
+
+                antiCharacter.life -= (this.level * this.weapon.damage);
+            }
+        }
+
+        let mainCharacter = Object.create(Character);
+        mainCharacter.nom = "Bluethoot";
+        mainCharacter.level = 5;
+        mainCharacter.life = 1000;
+        mainCharacter.weapon = {
+            arme: 'épée',
+            damage: 11
+        };
+
+        let antiCharacter = Object.create(Character);
+        antiCharacter.nom = "Jankiskhan";
+        antiCharacter.level = 6;
+        antiCharacter.life = 1000;
+        antiCharacter.weapon = {
+            arme: 'épée',
+            damage: 15
+        };
+
+        mainCharacter.attack();
+        mainCharacter.recevDamage();
+
+        console.log(antiCharacter.nom + ' lui reste ' + antiCharacter.life);
     </script>
 </body>
-</html>
 
+</html>
