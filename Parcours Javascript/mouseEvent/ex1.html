@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="div1" style="width: 100%; height: 200px;background:blue;"></div>
+    <div id="div2" style="width: 100%; height: 200px;background:red;"></div>
+    <div id="div3" style="width: 100%; height: 200px;background:yellow;"></div>
+    <div id="reset" style="width: 100%; height: 100px;background:green;text-align: center;">Reset</div>
+    <div id="posX" style="width: 50%; height: 100px;background:grey;text-align: center; float: left;"></div>
+    <div id="posY" style="width: 50%; height: 100px;background:darkgray;text-align: center; float: left;"></div>
+</body>
+
+<script>
+    function pouf() {
+        this.style.opacity = 0;
+    }
+
+    function paf() {
+        let divs = document.querySelectorAll('div');
+        for (i = 0; i < 3; i++) {
+            divs[i].style.opacity = 1;
+        }
+    }
+
+    function gps(event) {
+    var x = event.clientX;
+    var y = event.clientY;
+    
+    document.getElementById("posX").innerHTML = x;
+
+    document.getElementById("posY").innerHTML = y;
+}
+
+    let div1 = document.querySelector('#div1');
+    let div2 = document.querySelector('#div2');
+    let div3 = document.querySelector('#div3');
+
+    div1.addEventListener('mouseover', pouf);
+
+    div2.addEventListener('mouseover', pouf);
+
+    div3.addEventListener('mouseover', pouf);
+
+    reset.addEventListener('click', paf);
+
+    document.addEventListener('mouseover',gps)
+</script>
+
+</html>

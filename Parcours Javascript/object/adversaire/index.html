@@ -20,18 +20,18 @@
                 damage: this.damage
             },
 
-            attack: function () {
+            attack: function (laVictime) {
 
-                console.log(this.nom + ' attaque ' + antiCharacter.nom);
+                console.log(this.nom + ' attaque ' + laVictime.nom);
                 console.log('et lui inflige ' + (this.level * this.weapon.damage) + ' de dégats');
-                console.log(antiCharacter.nom + 'a maintenant ' + (antiCharacter.life - (this.level * this.weapon
+                console.log(antiCharacter.nom + 'a maintenant ' + (laVictime.life - (this.level * this.weapon
                     .damage)) + ' de vie');
-            },
+                    
 
-            recevDamage: function () {
-
-                antiCharacter.life -= (this.level * this.weapon.damage);
+                    
             }
+
+            
         }
 
         let mainCharacter = Object.create(Character);
@@ -52,8 +52,8 @@
             damage: 15
         };
 
-        mainCharacter.attack();
-        mainCharacter.recevDamage();
+        mainCharacter.attack(antiCharacter);
+        mainCharacter.recevDamage(mainCharacter);
 
         console.log(antiCharacter.nom + ' lui reste ' + antiCharacter.life);
     </script>
